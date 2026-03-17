@@ -12,18 +12,35 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AulaApiDevOpsManhaPiaget.Migrations
 {
     [DbContext(typeof(AulaApiDevOpsManhaPiagetContext))]
-    [Migration("20260316215820_Piaget")]
-    partial class Piaget
+    [Migration("20260317000502_cat")]
+    partial class cat
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("ProductVersion", "8.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AulaApiDevOpsManhaPiaget.Models.Categoria", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categoria");
+                });
 
             modelBuilder.Entity("AulaApiDevOpsManhaPiaget.Models.Produtos", b =>
                 {

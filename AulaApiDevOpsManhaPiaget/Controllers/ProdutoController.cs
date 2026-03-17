@@ -7,29 +7,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AulaApiDevOpsManhaPiaget.Data;
 using AulaApiDevOpsManhaPiaget.Models;
-using Microsoft.OpenApi.Models;
 
 namespace AulaApiDevOpsManhaPiaget.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutosController : ControllerBase
+    public class ProdutoController : ControllerBase
     {
         private readonly AulaApiDevOpsManhaPiagetContext _context;
 
-        public ProdutosController(AulaApiDevOpsManhaPiagetContext context)
+        public ProdutoController(AulaApiDevOpsManhaPiagetContext context)
         {
             _context = context;
         }
 
-        // GET: api/Produtos
+        // GET: api/Produto
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Produtos>>> GetProdutos()
         {
             return await _context.Produtos.ToListAsync();
         }
 
-        // GET: api/Produtos/5
+        // GET: api/Produto/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Produtos>> GetProdutos(Guid id)
         {
@@ -43,7 +42,7 @@ namespace AulaApiDevOpsManhaPiaget.Controllers
             return produtos;
         }
 
-        // PUT: api/Produtos/5
+        // PUT: api/Produto/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProdutos(Guid id, Produtos produtos)
@@ -74,7 +73,7 @@ namespace AulaApiDevOpsManhaPiaget.Controllers
             return NoContent();
         }
 
-        // POST: api/Produtos
+        // POST: api/Produto
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Produtos>> PostProdutos(Produtos produtos)
@@ -85,7 +84,7 @@ namespace AulaApiDevOpsManhaPiaget.Controllers
             return CreatedAtAction("GetProdutos", new { id = produtos.Id }, produtos);
         }
 
-        // DELETE: api/Produtos/5
+        // DELETE: api/Produto/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProdutos(Guid id)
         {

@@ -1,6 +1,8 @@
 //const apiUrl = "https://localhost:44381/api/produtos";
 //const apiUrl = "https://localhost:7298/api/produtos";
-const apiUrl = "https://localhost:44397/api/Produtos";
+//const apiUrl = "https://localhost:44397/api/Produtos";
+const apiUrl = "https://localhost:44397/api/Produto";
+//https://localhost:44397/swagger/index.html
 
 let produtosOriginais = [];
 

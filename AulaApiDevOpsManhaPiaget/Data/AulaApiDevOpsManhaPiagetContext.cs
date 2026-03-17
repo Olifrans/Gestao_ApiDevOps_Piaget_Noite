@@ -14,6 +14,7 @@ namespace AulaApiDevOpsManhaPiaget.Data
         {
         }
 
-        public DbSet<AulaApiDevOpsManhaPiaget.Models.Produtos> Produtos { get; set; } = default!;
+        public DbSet<Produtos> Produtos { get; set; } = default!;
+        public DbSet<AulaApiDevOpsManhaPiaget.Models.Categoria> Categoria { get; set; } = default!;
     }
 }

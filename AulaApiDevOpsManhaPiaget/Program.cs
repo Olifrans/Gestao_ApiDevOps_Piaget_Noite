@@ -1,10 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using AulaApiDevOpsManhaPiaget.Data;
-var builder = WebApplication.CreateBuilder(args);
+//using AulaApiDevOpsManhaPiaget.Data;
 
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AulaApiDevOpsManhaPiagetContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AulaApiDevOpsManhaPiagetContext") ?? throw new InvalidOperationException("Connection string 'AulaApiDevOpsManhaPiagetContext' not found.")));
+
+//builder.Services.AddDbContext<AulaApiDevOpsManhaPiagetContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("AulaApiDevOpsManhaPiagetContext") ?? throw new InvalidOperationException("Connection string 'AulaApiDevOpsManhaPiagetContext' not found.")));
 
 // Add services to the container.
 

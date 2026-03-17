@@ -6,24 +6,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AulaApiDevOpsManhaPiaget.Migrations
 {
     /// <inheritdoc />
-    public partial class Piaget : Migration
+    public partial class cat : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Produtos",
+                name: "Categoria",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Produtos", x => x.Id);
+                    table.PrimaryKey("PK_Categoria", x => x.Id);
                 });
         }
 
@@ -31,7 +29,7 @@ namespace AulaApiDevOpsManhaPiaget.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "Categoria");
         }
     }
 }
